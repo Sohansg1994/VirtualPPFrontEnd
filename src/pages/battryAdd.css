@@ -1,0 +1,15 @@
+.submitForm{
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    padding-left: 400px;
+}
+
+h3{
+    font-style: italic;
+    justify-content: flex-start;
+}
+
+.submitForm label{
+    min-width: 150PXs;
+}

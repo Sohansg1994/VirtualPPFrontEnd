@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+import AddBattery from "./pages/AddBattery";
+import SearchBattery from "./pages/SearchBattery";
+import {BrowserRouter as Router , Route ,Routes} from "react-router-dom"
+import NavigationBar from "./layout/NavigationBar";
+import Home from "./pages/Home";
+import ShowAll from "./pages/ShowAll";
+import EditBattery from "./pages/EditBattery";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+          <NavigationBar/>
+          <Routes>
+            <Route exact path="/" element={<Home/>} />
+            <Route exact path="/addbattery" element={<AddBattery/>} />
+            <Route exact path="/searchbattery" element={<SearchBattery/>} />
+            <Route exact path="/showall" element={<ShowAll/>} />
+            <Route exact path="/editbattery/:batteryId" element={<EditBattery/>} />
+
+          </Routes>
+      </Router>
     </div>
   );
 }
